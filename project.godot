@@ -15,6 +15,12 @@ run/main_scene="uid://c52ue2uaa5jul"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[file_customization]
+
+folder_colors={
+"res://shaders/": "pink"
+}
+
 [input]
 
 left={

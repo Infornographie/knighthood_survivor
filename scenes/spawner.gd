@@ -22,12 +22,13 @@ var second : int:
 		%Second.text = str(second).lpad(2,'0') #also set a padding to the left
 
 
-func spawn(pos : Vector2): #instanciate the enemy node & set spawn position & player reference
+func spawn(pos : Vector2, elite : bool = false): #instanciate the enemy node & set spawn position & player reference
 	var enemy_instance = enemy.instantiate() 
 	
 	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)] #each minute will be a different wave of enemy
 	enemy_instance.position = pos
 	enemy_instance.player_reference = player
+	enemy_instance.elite = elite
 	
 	get_tree().current_scene.add_child(enemy_instance) #add it to the scene tree
 
@@ -49,3 +50,8 @@ func _on_timer_timeout() -> void:
 func _on_pattern_timeout() -> void:
 	for i in range(75):
 		spawn(get_random_position())  #if the sample size is enough, randomness will create a circle
+
+
+func _on_elite_timeout() -> void:
+	print("elite spawn!")
+	spawn(get_random_position(), true)
