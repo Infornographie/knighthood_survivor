@@ -6,6 +6,8 @@ extends Node2D
 
 var distance : float = 800 #distance from which the enemy will be spawning
 
+@export var enemy_types : Array[Enemy] #Variable to store array of enemy
+
 var minute : int: #minute setter variable will be updating the "Minute" label
 	set(value):
 		minute = value
@@ -23,6 +25,7 @@ var second : int:
 func spawn(pos : Vector2): #instanciate the enemy node & set spawn position & player reference
 	var enemy_instance = enemy.instantiate() 
 	
+	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)] #each minute will be a different wave of enemy
 	enemy_instance.position = pos
 	enemy_instance.player_reference = player
 	
@@ -41,3 +44,8 @@ func amount(number : int = 1):
 func _on_timer_timeout() -> void:
 	second += 1
 	amount(second % 10) #increment "second" with each timeout and spawn enemies
+
+
+func _on_pattern_timeout() -> void:
+	for i in range(75):
+		spawn(get_random_position())  #if the sample size is enough, randomness will create a circle

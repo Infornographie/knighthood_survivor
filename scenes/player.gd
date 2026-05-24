@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 var speed : float = 150
+var health : float = 100:
+	set(value):  #make health a setter variable to update progress bar
+		health = value
+		%Health.value = value
 
 func _physics_process(delta):
 	velocity = Input.get_vector("left","right","up","down") * speed
@@ -15,3 +19,17 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("walk")
 	else:
 		$AnimatedSprite2D.play("idle")
+
+
+func take_damage(amount):
+	health -= amount
+	print(amount)
+
+
+func _on_self_damage_body_entered(body: Node2D) -> void:
+	take_damage(body.damage)
+
+
+func _on_timer_timeout() -> void:  #disable & enable with each timeout
+	%Collision.set_deferred("disabled", true)
+	%Collision.set_deferred("disabled", false)

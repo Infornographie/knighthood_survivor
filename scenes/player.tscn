@@ -90,7 +90,11 @@ animations = [{
 size = Vector2(20, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(28, 48)
+size = Vector2(28, 42)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 16.0
+height = 42.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1921260050]
 script = ExtResource("1_3vyb7")
@@ -107,5 +111,29 @@ visible = false
 texture = SubResource("PlaceholderTexture2D_g2els")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1065807352]
-position = Vector2(2, -4)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_qhqgy")
+
+[node name="SelfDamage" type="Area2D" parent="." unique_id=1561334339]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="SelfDamage" unique_id=720312510]
+unique_name_in_owner = true
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[node name="Health" type="ProgressBar" parent="." unique_id=1340953443]
+unique_name_in_owner = true
+offset_left = -16.0
+offset_top = -45.0
+offset_right = 16.0
+offset_bottom = -40.0
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1743314970]
+autostart = true
+
+[connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
