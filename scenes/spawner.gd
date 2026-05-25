@@ -5,6 +5,7 @@ extends Node2D
 @export var enemy : PackedScene
 
 var distance : float = 800 #distance from which the enemy will be spawning
+var can_spawn : bool = true
 
 @export var enemy_types : Array[Enemy] #Variable to store array of enemy
 
@@ -22,7 +23,18 @@ var second : int:
 		%Second.text = str(second).lpad(2,'0') #also set a padding to the left
 
 
+func _physics_process(_delta):
+	print(get_tree().get_node_count_in_group("Enemy"))
+	if get_tree().get_node_count_in_group("Enemy") < 400: #spawner will only spawn mobs if count is under 400
+		can_spawn = true
+	else:
+		can_spawn = false
+
+
 func spawn(pos : Vector2, elite : bool = false): #instanciate the enemy node & set spawn position & player reference
+	if not can_spawn and not elite: #using flag to control spawn
+		return
+	
 	var enemy_instance = enemy.instantiate() 
 	
 	enemy_instance.type = enemy_types[min(minute, enemy_types.size()-1)] #each minute will be a different wave of enemy
