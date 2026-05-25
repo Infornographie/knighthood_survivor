@@ -4,7 +4,7 @@
 
 [resource]
 shader = ExtResource("1_rebb7")
-shader_parameter/line_thickness = 1.0
+shader_parameter/line_thickness = 0.400000019
 shader_parameter/sin_frequency = 0.5
 shader_parameter/sin_offset = 0.0
 shader_parameter/light_offset = 0.5
