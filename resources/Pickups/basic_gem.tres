@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Gem" format=3 uid="uid://c0hgrovxqww7k"]
+
+[ext_resource type="Texture2D" uid="uid://bol3nil4nf4ps" path="res://assets/pixelquest16-july-2025-cave.png" id="1_1obo6"]
+[ext_resource type="Script" uid="uid://d27dcujggw3lj" path="res://scenes/gem.gd" id="2_b5cf6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_124u3"]
+atlas = ExtResource("1_1obo6")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ab50f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_124u3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_b5cf6")
+XP = 1.0
+title = "Simple Gem"
+icon = SubResource("SpriteFrames_ab50f")
+description = "Gains Experience Points."
+metadata/_custom_type_script = "uid://d27dcujggw3lj"

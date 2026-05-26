@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bivnk2avwxqf2" path="res://scenes/slot.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bd7oaqaol8y3c" path="res://assets/MiniPrinceMan.png" id="2_g2els"]
 [ext_resource type="Resource" uid="uid://ds0yqf4birlt4" path="res://resources/Weapons/magician.tres" id="3_qlg0r"]
+[ext_resource type="Texture2D" uid="uid://to84khjtqvye" path="res://assets/progress bar medium rounded under.png" id="4_smehm"]
+[ext_resource type="Texture2D" uid="uid://drnrdsorfde5q" path="res://assets/progress bar medium rounded over.png" id="5_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://u0fhtdtoiumt" path="res://assets/progress bar medium rounded progress green.png" id="6_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://ncjy4my4l2h6" path="res://assets/progress bar medium rounded progress red.png" id="8_d2wvv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_g2els")
@@ -98,14 +102,27 @@ size = Vector2(28, 42)
 radius = 16.0
 height = 42.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_smehm"]
+radius = 77.665955
+
 [node name="Player" type="CharacterBody2D" unique_id=1921260050]
 script = ExtResource("1_3vyb7")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=418861704]
 
+[node name="Level" type="Label" parent="UI" unique_id=1361488693]
+unique_name_in_owner = true
+offset_left = 36.0
+offset_top = 77.0
+offset_right = 76.0
+offset_bottom = 100.0
+text = "Lv 1"
+
 [node name="Weapons" type="HBoxContainer" parent="UI" unique_id=1189294859]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 35.0
+offset_top = 34.0
+offset_right = 163.0
+offset_bottom = 74.0
 
 [node name="Slot" parent="UI/Weapons" unique_id=2129898479 instance=ExtResource("2_dqkch")]
 layout_mode = 2
@@ -141,8 +158,33 @@ unique_name_in_owner = true
 position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_g2els")
 
-[node name="Health" type="ProgressBar" parent="." unique_id=1340953443]
+[node name="Health" type="TextureProgressBar" parent="." unique_id=992786568]
 unique_name_in_owner = true
+texture_filter = 1
+offset_left = -16.0
+offset_top = 22.0
+offset_right = 24.0
+offset_bottom = 62.0
+value = 100.0
+texture_under = ExtResource("4_smehm")
+texture_over = ExtResource("5_ur7pv")
+texture_progress = ExtResource("8_d2wvv")
+
+[node name="XP" type="TextureProgressBar" parent="." unique_id=1724249069]
+unique_name_in_owner = true
+texture_filter = 1
+offset_left = -16.0
+offset_top = 31.0
+offset_right = 84.0
+offset_bottom = 58.0
+max_value = 10.0
+texture_under = ExtResource("4_smehm")
+texture_over = ExtResource("5_ur7pv")
+texture_progress = ExtResource("6_y4r1p")
+
+[node name="Health_Old" type="ProgressBar" parent="." unique_id=1340953443]
+unique_name_in_owner = true
+visible = false
 offset_left = -16.0
 offset_top = -45.0
 offset_right = 16.0
@@ -155,5 +197,13 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1197119457]
 
+[node name="Magnet" type="Area2D" parent="." unique_id=1302251870]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet" unique_id=712335263]
+shape = SubResource("CircleShape2D_smehm")
+
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Magnet" to="." method="_on_magnet_area_entered"]

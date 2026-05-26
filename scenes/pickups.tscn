@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cahjwl8rtmdxd"]
+
+[ext_resource type="Script" uid="uid://ceeg6eptgf2yn" path="res://scenes/pickups.gd" id="1_lekrw"]
+[ext_resource type="Texture2D" uid="uid://bol3nil4nf4ps" path="res://assets/pixelquest16-july-2025-cave.png" id="2_1nwed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1seng"]
+atlas = ExtResource("2_1nwed")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0amsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1seng")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a2wac"]
+
+[node name="Pickups" type="Area2D" unique_id=924121439]
+light_mask = 5
+collision_layer = 5
+script = ExtResource("1_lekrw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=629626081]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_0amsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=812412063]
+shape = SubResource("CapsuleShape2D_a2wac")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
