@@ -6,6 +6,7 @@ var direction : Vector2
 var speed : float = 75
 var damage : float
 var knockback : Vector2
+var separation : float
 var elite : bool = false:
 	set(value):
 		elite = value
@@ -22,21 +23,27 @@ var type : Enemy:
 		damage = value.damage
 
 func _physics_process(delta):
-	var separation = (player_reference.position - position).length() #check separation from player
-	if separation >= 1000 and not elite: #if separation is more than 500 free them from memory, except elite
-		queue_free()
+	check_separation(delta)
+	knockback_update(delta)
 
-	#Enemy will be moving towards player position
+func check_separation(_delta):
+	separation = (player_reference.position - position).length()
+	if separation >= 1000 and not elite:
+		queue_free()
+	
+	# if any enemy is nearer, it will update the nearest_enemy from enemy to player
+	if separation < player_reference.nearest_enemy_distance:
+		player_reference.nearest_enemy = self
+
+func knockback_update(delta):
 	direction = (player_reference.position - position).normalized()
 	velocity = direction * speed
 	knockback = knockback.move_toward(Vector2.ZERO, 1) #knockback will be decaying over time
 	velocity += knockback #adding knockback to velocity
-	
 	var collider = move_and_collide(velocity * delta)
 	if collider:
 		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 70 #applies knockback to bodies colliding with the enemy
 
-	
 	#Turn the sprite facing
 	if direction.x > 0:
 		$AnimatedSprite2D.flip_h = false

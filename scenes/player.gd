@@ -6,7 +6,16 @@ var health : float = 100:
 		health = value
 		%Health.value = value
 
+var nearest_enemy : CharacterBody2D
+var nearest_enemy_distance : float = INF
+
 func _physics_process(delta):
+	if nearest_enemy:
+		nearest_enemy_distance = nearest_enemy.separation #if nearest_enemy is not null, store its separation
+		print(nearest_enemy.name)
+	else:
+		nearest_enemy_distance = INF
+	
 	velocity = Input.get_vector("left","right","up","down") * speed
 	move_and_collide(velocity * delta)
 	
