@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="SingleShot" format=3 uid="uid://ds0yqf4birlt4"]
+
+[ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="1_x1cj5"]
+[ext_resource type="Script" uid="uid://cqmnlveqvj0go" path="res://scenes/SingleShot.gd" id="2_6jsm7"]
+[ext_resource type="Texture2D" uid="uid://t1wa41xt0xhl" path="res://assets/MiniArchMage.png" id="3_wnrfl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4p50"]
+atlas = ExtResource("3_wnrfl")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pu2u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4p50")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_6jsm7")
+title = "Magician"
+texture = SubResource("SpriteFrames_6pu2u")
+damage = 1.0
+cooldown = 2.0
+speed = 400.0
+metadata/_custom_type_script = "uid://cqmnlveqvj0go"

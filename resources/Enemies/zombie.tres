@@ -1,50 +1,83 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bf1mlcarqoe0i"]
 
-[ext_resource type="Script" uid="uid://b17e6tbcaps0l" path="res://scenes/EnemyType.gd" id="1_pot77"]
-[ext_resource type="Texture2D" uid="uid://shvhf6xk24dk" path="res://assets/MiniZombie.png" id="2_otncy"]
+[ext_resource type="Script" uid="uid://b17e6tbcaps0l" path="res://scenes/EnemyType.gd" id="1_wm7qs"]
+[ext_resource type="Texture2D" uid="uid://shvhf6xk24dk" path="res://assets/MiniZombie.png" id="2_u5yx3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm7qs"]
+atlas = ExtResource("2_u5yx3")
+region = Rect2(0, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5yx3"]
+atlas = ExtResource("2_u5yx3")
+region = Rect2(32, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qm3tl"]
+atlas = ExtResource("2_u5yx3")
+region = Rect2(64, 256, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btbec"]
+atlas = ExtResource("2_u5yx3")
+region = Rect2(96, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pot77"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otncy"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qpgqg"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bg5ny"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ocoal"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gi7sr"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ub7ll"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1cvpt"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(96, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1n2ya"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(128, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fu1mu"]
-atlas = ExtResource("2_otncy")
+atlas = ExtResource("2_u5yx3")
 region = Rect2(160, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hhbsu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm7qs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5yx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qm3tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btbec")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pot77")
@@ -87,8 +120,9 @@ animations = [{
 }]
 
 [resource]
-script = ExtResource("1_pot77")
+script = ExtResource("1_wm7qs")
 title = "Zombie"
 texture = SubResource("SpriteFrames_hhbsu")
+health = 3.0
 damage = 5.0
 metadata/_custom_type_script = "uid://b17e6tbcaps0l"

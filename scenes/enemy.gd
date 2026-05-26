@@ -2,11 +2,30 @@ extends CharacterBody2D
 
 #variable to store player reference, direction and speed
 @export var player_reference : CharacterBody2D
+var damage_popup_node = preload("res://scenes/damage.tscn")
 var direction : Vector2
 var speed : float = 75
 var damage : float
 var knockback : Vector2
 var separation : float
+
+var is_dead : bool
+var health : float:
+	set(value):
+		health = value
+		if health <= 0 and not is_dead:
+			is_dead = true
+			$AnimatedSprite2D.play("death")
+			await get_tree().create_timer(1.0).timeout
+			var tween = get_tree().create_tween()
+			tween.tween_property($AnimatedSprite2D, "modulate:a", 0.0, 0.05)
+			tween.chain().tween_property($AnimatedSprite2D, "modulate:a", 1.0, 0.05)
+			tween.chain().tween_property($AnimatedSprite2D, "modulate:a", 0.0, 0.05)
+			tween.chain().tween_property($AnimatedSprite2D, "modulate:a", 1.0, 0.05)
+			tween.chain().tween_property($AnimatedSprite2D, "modulate:a", 0.0, 0.1)
+			await tween.finished
+			queue_free()
+
 var elite : bool = false:
 	set(value):
 		elite = value
@@ -21,10 +40,24 @@ var type : Enemy:
 		type = value
 		$AnimatedSprite2D.sprite_frames = value.texture
 		damage = value.damage
+		health = value.health
 
 func _physics_process(delta):
+	if is_dead:
+		return
 	check_separation(delta)
 	knockback_update(delta)
+	
+		#Turn the sprite facing
+	if direction.x > 0:
+		$AnimatedSprite2D.flip_h = false
+	elif direction.x < 0:
+		$AnimatedSprite2D.flip_h = true
+		
+	if velocity.length() > 0:
+		$AnimatedSprite2D.play("walk")
+	else:
+		$AnimatedSprite2D.play("idle")
 
 func check_separation(_delta):
 	separation = (player_reference.position - position).length()
@@ -44,16 +77,19 @@ func knockback_update(delta):
 	if collider:
 		collider.get_collider().knockback = (collider.get_collider().global_position - global_position).normalized() * 70 #applies knockback to bodies colliding with the enemy
 
-	#Turn the sprite facing
-	if direction.x > 0:
-		$AnimatedSprite2D.flip_h = false
-	elif direction.x < 0:
-		$AnimatedSprite2D.flip_h = true
-		
-	if velocity.length() > 0:
-		$AnimatedSprite2D.play("walk")
-	else:
-		$AnimatedSprite2D.play("idle")
+func damage_popup(amount): #instantiate damage popup & add it to scene tree
+	var popup = damage_popup_node.instantiate()
+	popup.text = str(int(amount))
+	popup.position = position + Vector2(-50,-25)
+	get_tree().current_scene.add_child(popup)
+
+func take_damage(amount):
+	var tween = get_tree().create_tween()
+	tween.tween_property($AnimatedSprite2D, "modulate", Color(3, 0.25, 0.25), 0.2)
+	tween.chain().tween_property($AnimatedSprite2D, "modulate", Color(1, 1, 1), 0.2)
+	tween.bind_node(self)
+	damage_popup(amount)
+	health -= amount
 
 func _ready():
 	add_to_group("Enemy")

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://c2svkfouvwhc0"]
+
+[ext_resource type="Script" uid="uid://bv7dxg7o5exon" path="res://scenes/projectile.gd" id="1_q3m7n"]
+[ext_resource type="Texture2D" uid="uid://t1wa41xt0xhl" path="res://assets/MiniArchMage.png" id="2_softn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6q2a6"]
+atlas = ExtResource("2_softn")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_byeak"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6q2a6")
+}],
+"loop": true,
+"name": &"thrown",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jxwu6"]
+radius = 22.803509
+
+[sub_resource type="Gradient" id="Gradient_q3m7n"]
+offsets = PackedFloat32Array(0, 0.9918033)
+colors = PackedColorArray(0.3764706, 0.59607846, 0.9098039, 1, 0.96862745, 0.96862745, 0.34117648, 0.827451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_softn"]
+gradient = SubResource("Gradient_q3m7n")
+
+[sub_resource type="Curve" id="Curve_6q2a6"]
+_data = [Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_byeak"]
+curve = SubResource("Curve_6q2a6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jxwu6"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 43.16
+direction = Vector3(1, 1, 0)
+initial_velocity_min = -10.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 8.0
+scale_curve = SubResource("CurveTexture_byeak")
+color_ramp = SubResource("GradientTexture1D_softn")
+turbulence_enabled = true
+turbulence_noise_speed = Vector3(0, 1, 0)
+turbulence_influence_max = 0.282
+
+[node name="Projectile" type="Area2D" unique_id=93022745]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_q3m7n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=422523191]
+texture_filter = 1
+position = Vector2(8, -36)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_byeak")
+animation = &"thrown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999180781]
+shape = SubResource("CircleShape2D_jxwu6")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1756519300]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=970804601]
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_jxwu6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

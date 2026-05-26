@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://bvtqw104dn0jo" path="res://scenes/spawner.gd" id="1_ik2nu"]
 [ext_resource type="PackedScene" uid="uid://cj5h2454ecujd" path="res://scenes/enemy.tscn" id="2_tx2ig"]
 [ext_resource type="Script" uid="uid://b17e6tbcaps0l" path="res://scenes/EnemyType.gd" id="3_4wbs5"]
-[ext_resource type="Resource" uid="uid://el3v1p570ohn" path="res://resources/skeleton.tres" id="4_30a77"]
-[ext_resource type="Resource" uid="uid://bf1mlcarqoe0i" path="res://resources/zombie.tres" id="5_p5s3f"]
-[ext_resource type="Resource" uid="uid://ds8f5ynj7xbxn" path="res://resources/ghost.tres" id="6_e3f8v"]
+[ext_resource type="Resource" uid="uid://el3v1p570ohn" path="res://resources/Enemies/skeleton.tres" id="4_30a77"]
+[ext_resource type="Resource" uid="uid://bf1mlcarqoe0i" path="res://resources/Enemies/zombie.tres" id="5_p5s3f"]
+[ext_resource type="Resource" uid="uid://ds8f5ynj7xbxn" path="res://resources/Enemies/ghost.tres" id="6_e3f8v"]
 
 [node name="Spawner" type="Node2D" unique_id=2000154868]
 script = ExtResource("1_ik2nu")

@@ -18,6 +18,10 @@ config/icon="res://icon.svg"
 [file_customization]
 
 folder_colors={
+"res://assets/": "gray",
+"res://resources/": "purple",
+"res://resources/Enemies/": "red",
+"res://resources/Weapons/": "green",
 "res://shaders/": "pink"
 }
 
