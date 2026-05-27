@@ -1,20 +1,12 @@
 [gd_scene format=3 uid="uid://blrwh5sjsfwfs"]
 
 [ext_resource type="Script" uid="uid://duvo3g27bxl1g" path="res://scenes/option_slot.gd" id="1_cxwls"]
-[ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="2_bux6k"]
 [ext_resource type="Texture2D" uid="uid://dc7y027f3kj5u" path="res://assets/icon49.png" id="2_je35h"]
-[ext_resource type="Script" uid="uid://qkovau6duveb" path="res://scenes/weapon.gd" id="3_11gh2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bux6k"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bux6k"]
-
-[sub_resource type="Resource" id="Resource_jaonc"]
-script = ExtResource("3_11gh2")
-texture = SubResource("SpriteFrames_bux6k")
-metadata/_custom_type_script = "uid://qkovau6duveb"
-
 [node name="OptionSlot" type="TextureButton" unique_id=1273331742]
+process_mode = 3
 custom_minimum_size = Vector2(315, 40)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -23,7 +15,6 @@ texture_normal = SubResource("PlaceholderTexture2D_bux6k")
 ignore_texture_size = true
 stretch_mode = 4
 script = ExtResource("1_cxwls")
-weapon = SubResource("Resource_jaonc")
 
 [node name="Label" type="Label" parent="." unique_id=710289762]
 layout_mode = 0

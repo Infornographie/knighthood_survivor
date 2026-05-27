@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="1_x1cj5"]
 [ext_resource type="Script" uid="uid://cqmnlveqvj0go" path="res://scenes/SingleShot.gd" id="2_6jsm7"]
 [ext_resource type="Texture2D" uid="uid://t1wa41xt0xhl" path="res://assets/MiniArchMage.png" id="3_wnrfl"]
+[ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_0iqcy"]
+[ext_resource type="Script" uid="uid://bo2a3gamue5d4" path="res://scenes/projectile_upgrade.gd" id="5_8px0d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4p50"]
 atlas = ExtResource("3_wnrfl")
@@ -19,6 +21,36 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Resource" id="Resource_tao4j"]
+script = ExtResource("5_8px0d")
+damage = 1.0
+description = "+1 damage"
+metadata/_custom_type_script = "uid://bo2a3gamue5d4"
+
+[sub_resource type="Resource" id="Resource_7ncnu"]
+script = ExtResource("5_8px0d")
+speed = 100.0
+description = "+100 speed"
+metadata/_custom_type_script = "uid://bo2a3gamue5d4"
+
+[sub_resource type="Resource" id="Resource_acdsl"]
+script = ExtResource("5_8px0d")
+damage = 2.0
+description = "+2 damage"
+metadata/_custom_type_script = "uid://bo2a3gamue5d4"
+
+[sub_resource type="Resource" id="Resource_te1mm"]
+script = ExtResource("5_8px0d")
+speed = 100.0
+description = "+100 speed"
+metadata/_custom_type_script = "uid://bo2a3gamue5d4"
+
+[sub_resource type="Resource" id="Resource_416le"]
+script = ExtResource("5_8px0d")
+cooldown = -0.4
+description = "-0.4s Cooldown"
+metadata/_custom_type_script = "uid://bo2a3gamue5d4"
+
 [resource]
 script = ExtResource("2_6jsm7")
 title = "Magician"
@@ -26,4 +58,5 @@ texture = SubResource("SpriteFrames_6pu2u")
 damage = 1.0
 cooldown = 2.0
 speed = 400.0
+upgrades = Array[ExtResource("4_0iqcy")]([SubResource("Resource_tao4j"), SubResource("Resource_7ncnu"), SubResource("Resource_acdsl"), SubResource("Resource_te1mm"), SubResource("Resource_416le")])
 metadata/_custom_type_script = "uid://cqmnlveqvj0go"

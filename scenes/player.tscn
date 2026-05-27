@@ -135,7 +135,7 @@ layout_mode = 2
 [node name="Slot3" parent="UI/Weapons" unique_id=509076158 instance=ExtResource("2_dqkch")]
 layout_mode = 2
 
-[node name="Options" type="VBoxContainer" parent="UI" unique_id=836740724]
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=836740724 node_paths=PackedStringArray("weapons")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -152,6 +152,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_ur7pv")
+weapons = NodePath("../Weapons")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=545240800]
 texture_filter = 1
