@@ -1,14 +1,29 @@
 [gd_scene format=3 uid="uid://csab05emadvix"]
 
 [ext_resource type="Script" uid="uid://5t8lsghpo0nu" path="res://scenes/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bol3nil4nf4ps" path="res://assets/pixelquest16-july-2025-cave.png" id="2_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://bivnk2avwxqf2" path="res://scenes/slot.tscn" id="2_dqkch"]
 [ext_resource type="Texture2D" uid="uid://bd7oaqaol8y3c" path="res://assets/MiniPrinceMan.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://dc7y027f3kj5u" path="res://assets/icon49.png" id="3_3v2ag"]
 [ext_resource type="Resource" uid="uid://ds0yqf4birlt4" path="res://resources/Weapons/magician.tres" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://to84khjtqvye" path="res://assets/progress bar medium rounded under.png" id="4_smehm"]
 [ext_resource type="Script" uid="uid://caouo6uwakt1c" path="res://scenes/options.gd" id="4_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://drnrdsorfde5q" path="res://assets/progress bar medium rounded over.png" id="5_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://u0fhtdtoiumt" path="res://assets/progress bar medium rounded progress green.png" id="6_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://ncjy4my4l2h6" path="res://assets/progress bar medium rounded progress red.png" id="8_d2wvv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("2_d2wvv")
+region = Rect2(34, 16.1, 12, 15.9)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f1ej7"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 1, 1)
+angle_min = -38.69999
+angle_max = 278.7
+gravity = Vector3(0, 98, 0)
+color = Color(1, 1, 1, 0.9137255)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("2_g2els")
@@ -111,6 +126,50 @@ script = ExtResource("1_3vyb7")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=418861704]
 
+[node name="Particle" type="GPUParticles2D" parent="UI" unique_id=52671646]
+process_mode = 3
+visible = false
+texture_filter = 1
+position = Vector2(575, -15)
+scale = Vector2(1.9, 1.9)
+amount = 200
+texture = SubResource("AtlasTexture_jej6c")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_f1ej7")
+
+[node name="Panel" type="NinePatchRect" parent="UI" unique_id=673500871]
+process_mode = 3
+visible = false
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -399.375
+offset_top = -209.75
+offset_right = 399.375
+offset_bottom = 209.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_3v2ag")
+region_rect = Rect2(7, 7, 18, 18)
+
+[node name="Label" type="Label" parent="UI/Panel" unique_id=899926586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -156.5
+offset_right = 36.0
+offset_bottom = -133.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "LEVEL UP"
+
 [node name="Level" type="Label" parent="UI" unique_id=1361488693]
 unique_name_in_owner = true
 offset_left = 36.0
@@ -135,7 +194,7 @@ layout_mode = 2
 [node name="Slot3" parent="UI/Weapons" unique_id=509076158 instance=ExtResource("2_dqkch")]
 layout_mode = 2
 
-[node name="Options" type="VBoxContainer" parent="UI" unique_id=836740724 node_paths=PackedStringArray("weapons")]
+[node name="Options" type="VBoxContainer" parent="UI" unique_id=836740724 node_paths=PackedStringArray("weapons", "particles", "panel")]
 unique_name_in_owner = true
 process_mode = 3
 anchors_preset = 8
@@ -153,6 +212,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_ur7pv")
 weapons = NodePath("../Weapons")
+particles = NodePath("../Particle")
+panel = NodePath("../Panel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=545240800]
 texture_filter = 1

@@ -3,11 +3,18 @@ extends VBoxContainer
 @export var weapons : HBoxContainer
 var OptionSlot = preload("res://scenes/option_slot.tscn")
 
+@export var particles : GPUParticles2D
+@export var panel : NinePatchRect
+
 func _ready():
 	hide()
+	particles.hide()
+	panel.hide()
 
 func close_option():
 	hide()
+	particles.hide()
+	panel.hide()
 	get_tree().paused = false
 
 func get_available_weapons():
@@ -37,4 +44,6 @@ func show_option():
 		return
 		
 	show()
+	particles.show()
+	panel.show()
 	get_tree().paused = true
