@@ -3,6 +3,7 @@ extends TextureButton
 @export var weapon : Weapon:
 	set(value):
 		weapon = value
+		print(get_children())
 		texture_normal = value.texture.get_frame_texture("default", 0)
 		$Label.text = "Lv. " + str(weapon.level + 1)
 

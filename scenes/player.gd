@@ -29,7 +29,7 @@ var level : int = 1:
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.separation #if nearest_enemy is not null, store its separation
-		print(nearest_enemy.name)
+		#qqqqqprint(nearest_enemy.name)
 	else:
 		nearest_enemy_distance = INF
 	
@@ -50,7 +50,7 @@ func _physics_process(delta):
 
 func take_damage(amount):
 	health -= amount
-	print(amount)
+	#print(amount)
 
 
 func _on_self_damage_body_entered(body: Node2D) -> void:

@@ -24,7 +24,7 @@ var second : int:
 
 
 func _physics_process(_delta):
-	print(get_tree().get_node_count_in_group("Enemy"))
+	#print(get_tree().get_node_count_in_group("Enemy"))
 	if get_tree().get_node_count_in_group("Enemy") < 400: #spawner will only spawn mobs if count is under 400
 		can_spawn = true
 	else:
