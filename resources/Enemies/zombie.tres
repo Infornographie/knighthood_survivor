@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://bf1mlcarqoe0i"]
 
+[ext_resource type="Script" uid="uid://bjqtske7q3cm1" path="res://scenes/PickupResource.gd" id="1_btbec"]
 [ext_resource type="Script" uid="uid://b17e6tbcaps0l" path="res://scenes/EnemyType.gd" id="1_wm7qs"]
+[ext_resource type="Resource" uid="uid://c0hgrovxqww7k" path="res://resources/Pickups/basic_gem.tres" id="2_pd72f"]
 [ext_resource type="Texture2D" uid="uid://shvhf6xk24dk" path="res://assets/MiniZombie.png" id="2_u5yx3"]
+[ext_resource type="Resource" uid="uid://cpjndesu0jn2t" path="res://resources/Pickups/augmented_gem.tres" id="3_cf0pa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wm7qs"]
 atlas = ExtResource("2_u5yx3")
@@ -125,4 +128,5 @@ title = "Zombie"
 texture = SubResource("SpriteFrames_hhbsu")
 health = 3.0
 damage = 5.0
+drops = Array[ExtResource("1_btbec")]([ExtResource("2_pd72f"), ExtResource("3_cf0pa")])
 metadata/_custom_type_script = "uid://b17e6tbcaps0l"

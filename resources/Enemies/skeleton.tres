@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://el3v1p570ohn"]
 
+[ext_resource type="Script" uid="uid://bjqtske7q3cm1" path="res://scenes/PickupResource.gd" id="1_6v3ng"]
 [ext_resource type="Script" uid="uid://b17e6tbcaps0l" path="res://scenes/EnemyType.gd" id="1_ghu5m"]
 [ext_resource type="Texture2D" uid="uid://creo6huf1tu0n" path="res://assets/MiniSkeleton.png" id="2_ghu5m"]
+[ext_resource type="Resource" uid="uid://c0hgrovxqww7k" path="res://resources/Pickups/basic_gem.tres" id="2_wounh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6v3ng"]
 atlas = ExtResource("2_ghu5m")
@@ -138,4 +140,5 @@ script = ExtResource("1_ghu5m")
 texture = SubResource("SpriteFrames_yvkqo")
 health = 2.0
 damage = 3.0
+drops = Array[ExtResource("1_6v3ng")]([ExtResource("2_wounh")])
 metadata/_custom_type_script = "uid://b17e6tbcaps0l"

@@ -19,6 +19,7 @@ var level : int = 1:
 	set(value):
 		level = value
 		%Level.text = "Lv. " + str(value)
+		%Options.show_option()
 		
 		if level >= 3:
 			%XP.max_value = 20

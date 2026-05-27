@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://blrwh5sjsfwfs"]
+
+[ext_resource type="Script" uid="uid://duvo3g27bxl1g" path="res://scenes/option_slot.gd" id="1_cxwls"]
+[ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="2_bux6k"]
+[ext_resource type="Texture2D" uid="uid://dc7y027f3kj5u" path="res://assets/icon49.png" id="2_je35h"]
+[ext_resource type="Script" uid="uid://qkovau6duveb" path="res://scenes/weapon.gd" id="3_11gh2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bux6k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bux6k"]
+
+[sub_resource type="Resource" id="Resource_jaonc"]
+script = ExtResource("3_11gh2")
+texture = SubResource("SpriteFrames_bux6k")
+metadata/_custom_type_script = "uid://qkovau6duveb"
+
+[node name="OptionSlot" type="TextureButton" unique_id=1273331742]
+custom_minimum_size = Vector2(315, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+texture_normal = SubResource("PlaceholderTexture2D_bux6k")
+ignore_texture_size = true
+stretch_mode = 4
+script = ExtResource("1_cxwls")
+weapon = SubResource("Resource_jaonc")
+
+[node name="Label" type="Label" parent="." unique_id=710289762]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 8.0
+offset_right = 87.0
+offset_bottom = 31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Lv. 2"
+
+[node name="Description" type="Label" parent="." unique_id=2079249543]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 9.0
+offset_right = 292.0
+offset_bottom = 32.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "description text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1871636574]
+show_behind_parent = true
+texture_filter = 1
+custom_minimum_size = Vector2(315, 40)
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 40.0
+texture = ExtResource("2_je35h")
+region_rect = Rect2(7.992711, 7.9917173, 16.040611, 16.04419)
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

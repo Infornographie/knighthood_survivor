@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="Enemy" format=3 uid="uid://ds8f5ynj7xbxn"]
 
+[ext_resource type="Script" uid="uid://bjqtske7q3cm1" path="res://scenes/PickupResource.gd" id="1_8f1ss"]
 [ext_resource type="Script" uid="uid://b17e6tbcaps0l" path="res://scenes/EnemyType.gd" id="1_a52df"]
 [ext_resource type="Texture2D" uid="uid://d1x7drchsxu2" path="res://assets/MiniGhost.png" id="2_01x7c"]
+[ext_resource type="Resource" uid="uid://cpjndesu0jn2t" path="res://resources/Pickups/augmented_gem.tres" id="2_xoy27"]
+[ext_resource type="Resource" uid="uid://c0hgrovxqww7k" path="res://resources/Pickups/basic_gem.tres" id="3_sdwmh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a52df"]
 atlas = ExtResource("2_01x7c")
@@ -132,4 +135,5 @@ title = "Ghost"
 texture = SubResource("SpriteFrames_p5c5l")
 health = 3.0
 damage = 7.0
+drops = Array[ExtResource("1_8f1ss")]([ExtResource("2_xoy27"), ExtResource("3_sdwmh")])
 metadata/_custom_type_script = "uid://b17e6tbcaps0l"

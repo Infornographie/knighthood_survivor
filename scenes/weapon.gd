@@ -4,6 +4,8 @@ class_name Weapon
 @export var title : String
 @export var texture : SpriteFrames
 
+@export var level : int = 0
+
 @export var damage : float
 @export var cooldown : float
 @export var speed : float

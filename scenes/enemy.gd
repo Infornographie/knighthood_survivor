@@ -9,6 +9,8 @@ var damage : float
 var knockback : Vector2
 var separation : float
 
+var drop = preload("res://scenes/pickups.tscn")
+
 var is_dead : bool
 var health : float:
 	set(value):
@@ -24,6 +26,7 @@ var health : float:
 			tween.chain().tween_property($AnimatedSprite2D, "modulate:a", 1.0, 0.05)
 			tween.chain().tween_property($AnimatedSprite2D, "modulate:a", 0.0, 0.1)
 			await tween.finished
+			drop_item()
 			queue_free()
 
 var elite : bool = false:
@@ -90,6 +93,20 @@ func take_damage(amount):
 	tween.bind_node(self)
 	damage_popup(amount)
 	health -= amount
+
+func drop_item():
+	if type.drops.size() == 0:
+		return
+	
+	var item = type.drops.pick_random()
+	
+	var item_to_drop = drop.instantiate()
+	
+	item_to_drop.type = item
+	item_to_drop.position = position
+	item_to_drop.player_reference = player_reference
+	
+	get_tree().current_scene.call_deferred("add_child", item_to_drop)
 
 func _ready():
 	add_to_group("Enemy")

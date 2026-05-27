@@ -4,8 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://c312ic8nhrlf" path="res://scenes/spawner.tscn" id="1_j8ivh"]
 [ext_resource type="Texture2D" uid="uid://cuae4ahsb1yyd" path="res://assets/TX Tileset Grass.png" id="1_nd71p"]
 [ext_resource type="Texture2D" uid="uid://cn88hfye137fp" path="res://assets/TX Props.png" id="2_7ddre"]
-[ext_resource type="PackedScene" uid="uid://cahjwl8rtmdxd" path="res://scenes/pickups.tscn" id="5_3qnke"]
-[ext_resource type="Resource" uid="uid://c0hgrovxqww7k" path="res://resources/Pickups/basic_gem.tres" id="6_wtsjf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ddre"]
 texture = ExtResource("1_nd71p")
@@ -651,93 +649,3 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1921260050 instance=ExtResource("1_g7g4h")]
 position = Vector2(557, 296)
-
-[node name="Pickups" parent="." unique_id=924121439 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(271, 143)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups2" parent="." unique_id=72288837 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(252, 163)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups3" parent="." unique_id=2073901180 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(217, 140)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups4" parent="." unique_id=837989275 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(254, 129)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups5" parent="." unique_id=1624502781 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(230, 154)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups6" parent="." unique_id=1926097761 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(29, 537)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups7" parent="." unique_id=876382602 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(276, 523)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups8" parent="." unique_id=784682858 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(506, 687)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups9" parent="." unique_id=969410685 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(392, 620)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups10" parent="." unique_id=1575313439 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(213, 561)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups11" parent="." unique_id=820118197 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(28, 301)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups12" parent="." unique_id=1001731844 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(250, 260)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups13" parent="." unique_id=1782280325 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(184, 353)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups14" parent="." unique_id=2075879427 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(522, 43)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
-
-[node name="Pickups15" parent="." unique_id=403796044 node_paths=PackedStringArray("player_reference") instance=ExtResource("5_3qnke")]
-position = Vector2(213, 170)
-collision_layer = 4
-type = ExtResource("6_wtsjf")
-player_reference = NodePath("../Player")
