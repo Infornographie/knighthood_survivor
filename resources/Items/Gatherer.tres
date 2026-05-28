@@ -1,0 +1,73 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://cuaxv57gi72sj"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_dofyg"]
+[ext_resource type="Texture2D" uid="uid://dri6df06w44y0" path="res://assets/MiniGatherer.png" id="2_ogatg"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_c5617"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dofyg"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogatg"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5617"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiubl"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjqh2"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jjqh2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dofyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogatg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5617")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiubl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjqh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_dofyg"]
+script = ExtResource("3_c5617")
+description = "+50% gatering area"
+magnet = 40.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_ogatg"]
+script = ExtResource("3_c5617")
+description = "+50% gatering area"
+magnet = 60.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_c5617"]
+script = ExtResource("3_c5617")
+description = "+50% gatering area"
+magnet = 90.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_dofyg")
+upgrades = Array[ExtResource("3_c5617")]([SubResource("Resource_dofyg"), SubResource("Resource_ogatg"), SubResource("Resource_c5617")])
+title = "Magnet"
+texture = SubResource("SpriteFrames_jjqh2")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

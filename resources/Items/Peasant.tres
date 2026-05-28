@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://d4jbsm5r4k0em"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_m6lqq"]
+[ext_resource type="Texture2D" uid="uid://b8det0tcyeb68" path="res://assets/MiniPeasant.png" id="2_qvfmk"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_c2yvj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6lqq"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvfmk"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2yvj"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4die"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5j2wm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6lqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvfmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2yvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4die")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_nm033"]
+script = ExtResource("3_c2yvj")
+description = "+50 Max Health"
+max_health = 50.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_m6lqq")
+upgrades = Array[ExtResource("3_c2yvj")]([SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033")])
+title = "Peasant"
+texture = SubResource("SpriteFrames_5j2wm")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

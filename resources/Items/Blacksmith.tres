@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://b6h5v4y5c6ljk"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_hnt03"]
+[ext_resource type="Texture2D" uid="uid://cay8ks0lqsfvu" path="res://assets/MiniBlacksmith.png" id="2_jxc7b"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_w2kde"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jdpg"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbwot"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8of7"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0743"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4ujj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jdpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbwot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8of7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0743")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_8e852"]
+script = ExtResource("3_w2kde")
+description = "+0.25 Might"
+might = 0.25
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_hnt03")
+upgrades = Array[ExtResource("3_w2kde")]([SubResource("Resource_8e852"), SubResource("Resource_8e852"), SubResource("Resource_8e852"), SubResource("Resource_8e852"), SubResource("Resource_8e852")])
+title = "Blacksmith"
+texture = SubResource("SpriteFrames_n4ujj")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

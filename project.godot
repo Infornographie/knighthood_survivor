@@ -21,6 +21,7 @@ folder_colors={
 "res://assets/": "gray",
 "res://resources/": "purple",
 "res://resources/Enemies/": "red",
+"res://resources/Items/": "teal",
 "res://resources/Weapons/": "green",
 "res://shaders/": "pink"
 }

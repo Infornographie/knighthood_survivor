@@ -1,0 +1,70 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://tcgbuvnsjq5f"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_b1ooa"]
+[ext_resource type="Texture2D" uid="uid://bd7oaqaol8y3c" path="res://assets/MiniPrinceMan.png" id="2_bca1m"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_bbcmj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccnrs"]
+atlas = ExtResource("2_bca1m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38ito"]
+atlas = ExtResource("2_bca1m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcb78"]
+atlas = ExtResource("2_bca1m")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6xsh"]
+atlas = ExtResource("2_bca1m")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5aj1b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccnrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38ito")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcb78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6xsh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_44gda"]
+script = ExtResource("3_bbcmj")
+description = "+10% XP"
+growth = 1.1
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_le7f4"]
+script = ExtResource("3_bbcmj")
+description = "+10% XP"
+growth = 0.1
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_5bi8l"]
+script = ExtResource("3_bbcmj")
+growth = 0.1
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_lmq6b"]
+script = ExtResource("3_bbcmj")
+growth = 0.1
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_b1ooa")
+upgrades = Array[ExtResource("3_bbcmj")]([SubResource("Resource_44gda"), SubResource("Resource_le7f4"), SubResource("Resource_5bi8l"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b")])
+title = "Second Prince"
+texture = SubResource("SpriteFrames_5aj1b")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

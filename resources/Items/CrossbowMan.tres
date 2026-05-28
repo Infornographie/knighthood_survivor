@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://d2fguo3s0k1hc"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_cmt75"]
+[ext_resource type="Texture2D" uid="uid://ckoi1m6fm47te" path="res://assets/MiniCrossBowMan.png" id="2_rf5d3"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_2ql4e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdp8h"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kf75"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_det2g"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36kex"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbl2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdp8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kf75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_det2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36kex")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_ltion"]
+script = ExtResource("3_2ql4e")
+description = "+50 Firing distance"
+area = 50.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_cmt75")
+upgrades = Array[ExtResource("3_2ql4e")]([SubResource("Resource_ltion"), SubResource("Resource_ltion"), SubResource("Resource_ltion"), SubResource("Resource_ltion")])
+title = "Crossbow Man"
+texture = SubResource("SpriteFrames_cbl2m")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

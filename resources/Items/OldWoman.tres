@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://bywmsrv0q03fh"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_0jwns"]
+[ext_resource type="Texture2D" uid="uid://ckkebjpxakmkl" path="res://assets/MiniOldWoman.png" id="2_eonlk"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_b5kl7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jwns"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eonlk"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5kl7"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyhfh"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2b2g7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jwns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eonlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5kl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyhfh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_anu0t"]
+script = ExtResource("3_b5kl7")
+description = "+1 regen"
+recovery = 1.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_0jwns")
+upgrades = Array[ExtResource("3_b5kl7")]([SubResource("Resource_anu0t"), SubResource("Resource_anu0t"), SubResource("Resource_anu0t"), SubResource("Resource_anu0t"), SubResource("Resource_anu0t")])
+title = "Old Woman"
+texture = SubResource("SpriteFrames_2b2g7")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

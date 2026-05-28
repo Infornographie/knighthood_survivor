@@ -1,0 +1,116 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://chqwshnxj3mx5"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_ll2ps"]
+[ext_resource type="Texture2D" uid="uid://ce83lf6mgxfjn" path="res://assets/MiniHorseMan.png" id="2_vuvh7"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_h5l4f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll2ps"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vuvh7"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5l4f"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gonbp"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gwnu"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k25w3"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gwnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll2ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vuvh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5l4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gonbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gwnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k25w3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_k25w3"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 15.0
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_uk8dp"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 16.5
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_xv588"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 18.15
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_jeh8m"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 19.97
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_nhglt"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 21.96
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_iq2s1"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 24.16
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_5altu"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 26.57
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_ku0ag"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 29.23
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[sub_resource type="Resource" id="Resource_p1vht"]
+script = ExtResource("3_h5l4f")
+description = "+10% Speed"
+movement_speed = 32.15
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_ll2ps")
+upgrades = Array[ExtResource("3_h5l4f")]([SubResource("Resource_k25w3"), SubResource("Resource_uk8dp"), SubResource("Resource_xv588"), SubResource("Resource_jeh8m"), SubResource("Resource_nhglt"), SubResource("Resource_iq2s1"), SubResource("Resource_5altu"), SubResource("Resource_ku0ag"), SubResource("Resource_p1vht")])
+title = "Horse Man"
+texture = SubResource("SpriteFrames_8gwnu")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

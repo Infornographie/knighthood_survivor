@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="PassiveItem" format=3 uid="uid://deh1k2atr2m1u"]
+
+[ext_resource type="Script" uid="uid://cogoceccj8gdi" path="res://scenes/passive_item.gd" id="1_3vll8"]
+[ext_resource type="Texture2D" uid="uid://cb2mwqatyrqop" path="res://assets/MiniShieldMan.png" id="2_y1rjs"]
+[ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_1jjai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vll8"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1rjs"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jjai"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7u8dl"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e77qe"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2wfg"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2c6tr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vll8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1rjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jjai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7u8dl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e77qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2wfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_m2wfg"]
+script = ExtResource("3_1jjai")
+description = "+0.5 Armor"
+armor = 0.5
+metadata/_custom_type_script = "uid://bfnqq8xbayqre"
+
+[resource]
+script = ExtResource("1_3vll8")
+upgrades = Array[ExtResource("3_1jjai")]([SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg")])
+title = "Shield Bearer"
+texture = SubResource("SpriteFrames_2c6tr")
+metadata/_custom_type_script = "uid://cogoceccj8gdi"

@@ -282,7 +282,8 @@ autostart = true
 collision_layer = 0
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Magnet" unique_id=712335263]
+[node name="Magnet" type="CollisionShape2D" parent="Magnet" unique_id=712335263]
+unique_name_in_owner = true
 shape = SubResource("CircleShape2D_smehm")
 
 [connection signal="body_entered" from="SelfDamage" to="." method="_on_self_damage_body_entered"]
