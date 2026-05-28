@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://bbhou3wv4tokq"]
+
+[ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="1_rq63m"]
+[ext_resource type="Script" uid="uid://qkovau6duveb" path="res://scenes/weapon.gd" id="2_3gaet"]
+[ext_resource type="Texture2D" uid="uid://t1wa41xt0xhl" path="res://assets/MiniArchMage.png" id="3_sj438"]
+[ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_06ua5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrbgc"]
+atlas = ExtResource("3_sj438")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pllh4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrbgc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_3gaet")
+damage = 10.0
+cooldown = 0.1
+speed = 500.0
+title = "Arch Mage"
+texture = SubResource("SpriteFrames_pllh4")
+metadata/_custom_type_script = "uid://qkovau6duveb"

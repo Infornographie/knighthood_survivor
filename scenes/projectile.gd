@@ -26,11 +26,43 @@ func _on_body_entered(body: Node2D) -> void:
 		body.knockback += direction * 75
 
 
+#func _on_screen_exited() -> void:
+	#print("screen exited, global_pos: ", global_position)
+	#var particlesBack = $GPUParticles2D
+	#var particlesFront = $GPUParticles2D2
+	#var global_pos = global_position
+	#print("particles back exists: ", is_instance_valid(particlesBack))
+	#print("emitting before: ", particlesBack.emitting)
+	#
+	#remove_child(particlesBack)
+	#remove_child(particlesFront)
+	#get_tree().current_scene.add_child(particlesFront)
+	#get_tree().current_scene.add_child(particlesBack)
+	#
+	#particlesFront.emitting = false
+	#particlesBack.emitting = false
+	#await get_tree().create_timer(2.0).timeout
+	#particlesFront.queue_free()
+	#particlesBack.queue_free()
+	#queue_free()
+
 func _on_screen_exited() -> void:
-	var particles = $GPUParticles2D
-	remove_child(particles)
-	get_tree().current_scene.add_child(particles)
-	particles.emitting = false
+	var particlesBack = $GPUParticles2D
+	var particlesFront = $GPUParticles2D2
+	var global_pos = global_position
+	
+	remove_child(particlesBack)
+	remove_child(particlesFront)
+	get_tree().current_scene.add_child(particlesFront)
+	get_tree().current_scene.add_child(particlesBack)
+	
+	particlesFront.global_position = global_pos
+	particlesBack.global_position = global_pos
+	
+	particlesFront.emitting = false
+	particlesBack.emitting = false
+	
 	await get_tree().create_timer(2.0).timeout
-	particles.queue_free()
+	particlesFront.queue_free()
+	particlesBack.queue_free()
 	queue_free()

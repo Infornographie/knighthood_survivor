@@ -20,6 +20,10 @@ var magnet : float = 0:
 var growth : float = 1
 var nearest_enemy : CharacterBody2D
 var nearest_enemy_distance : float = 400 + area
+var gold : int = 0:
+	set(value):
+		gold = value
+		%Gold.text = "Gold: " + str(value)
 
 var XP: int = 0:
 	set(value):
@@ -89,3 +93,9 @@ func check_XP():
 func _on_magnet_area_entered(area):
 	if area.has_method("follow"): #call the follow function from the pickups
 		area.follow(self)
+
+func gain_gold(amount):
+	gold += amount
+
+func open_chest():
+	$UI/Chest.open()

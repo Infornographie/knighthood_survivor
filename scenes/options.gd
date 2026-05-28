@@ -45,6 +45,12 @@ func show_option():
 	var option_size = 0
 	for weapon in weapons_available:
 		option_size += add_option(weapon)
+		
+		if weapon.max_level_reached() and weapon.item_needed in passive_item_available:
+			var option_slot = OptionSlot.instantiate()
+			option_slot.item = weapon
+			add_child(option_slot)
+			option_size += 1
 	
 	for passive_items in passive_item_available:
 		option_size += add_option(passive_items)
@@ -56,3 +62,13 @@ func show_option():
 	particles.show()
 	panel.show()
 	get_tree().paused = true
+
+func get_available_upgrades() -> Array[Item]:
+	var upgrades : Array[Item] = []
+	for weapon : Weapon in get_available_resource_in(weapons):
+		if weapon.is_upgradable():
+			upgrades.append(weapon)
+	for passive_item : PassiveItem in get_available_resource_in(passive_items):
+		if passive_item.is_upgradable():
+			upgrades.append(passive_item)
+	return upgrades

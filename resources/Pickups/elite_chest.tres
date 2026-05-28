@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="Chest" format=3 uid="uid://befoqanemuwi8"]
+
+[ext_resource type="Texture2D" uid="uid://blep2y0n43emy" path="res://assets/RPG Chests.png" id="1_kuth6"]
+[ext_resource type="Script" uid="uid://t01ewehpuhkj" path="res://scenes/ChestResource.gd" id="2_gmlk1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okmsw"]
+atlas = ExtResource("1_kuth6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcp5h"]
+atlas = ExtResource("1_kuth6")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ke7xv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okmsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcp5h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_gmlk1")
+title = "Elite Chest"
+icon = SubResource("SpriteFrames_ke7xv")
+metadata/_custom_type_script = "uid://t01ewehpuhkj"
