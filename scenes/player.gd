@@ -18,7 +18,7 @@ var magnet : float = 0:
 		magnet = value
 		%Magnet.shape.radius = 80 + value
 var growth : float = 1
-var nearest_enemy : CharacterBody2D
+var nearest_enemy
 var nearest_enemy_distance : float = 400 + area
 var gold : int = 0:
 	set(value):

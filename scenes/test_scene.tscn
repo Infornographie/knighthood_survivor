@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c312ic8nhrlf" path="res://scenes/spawner.tscn" id="1_j8ivh"]
 [ext_resource type="Texture2D" uid="uid://cuae4ahsb1yyd" path="res://assets/TX Tileset Grass.png" id="1_nd71p"]
 [ext_resource type="Texture2D" uid="uid://cn88hfye137fp" path="res://assets/TX Props.png" id="2_7ddre"]
+[ext_resource type="PackedScene" uid="uid://bpsvhu28qjroy" path="res://scenes/destructible.tscn" id="5_qjeyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ddre"]
 texture = ExtResource("1_nd71p")
@@ -628,6 +629,10 @@ sources/0 = SubResource("TileSetAtlasSource_qjeyg")
 
 [node name="TestScene" type="Node2D" unique_id=7865463]
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=503505808]
+color = Color(0.5835259, 0.5833936, 0.972457, 1)
+blend_mode = 2
+
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1339053240]
 repeat_size = Vector2(3600, 1999.625)
 
@@ -649,3 +654,6 @@ player = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=1921260050 instance=ExtResource("1_g7g4h")]
 position = Vector2(557, 296)
+
+[node name="Destructible" parent="." unique_id=1677554489 instance=ExtResource("5_qjeyg")]
+position = Vector2(171, 132)
