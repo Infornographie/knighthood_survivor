@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Death" format=3 uid="uid://cj3iy46ex132r"]
+
+[ext_resource type="Texture2D" uid="uid://csxn1jj44obui" path="res://assets/books.png" id="1_wjh4y"]
+[ext_resource type="Script" uid="uid://ds3qmc1sjtfh3" path="res://scenes/death.gd" id="2_1s3nx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ypk1"]
+atlas = ExtResource("1_wjh4y")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63uys"]
+atlas = ExtResource("1_wjh4y")
+region = Rect2(48, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d566k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ypk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63uys")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_1s3nx")
+title = "Death"
+icon = SubResource("SpriteFrames_d566k")
+description = "Destroys every enemy."
+metadata/_custom_type_script = "uid://ds3qmc1sjtfh3"

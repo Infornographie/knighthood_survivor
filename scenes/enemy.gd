@@ -110,5 +110,8 @@ func drop_item():
 	
 	get_tree().current_scene.call_deferred("add_child", item_to_drop)
 
+func die():
+	health = 0
+
 func _ready():
 	add_to_group("Enemy")

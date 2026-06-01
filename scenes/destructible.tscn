@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://doofiucwg1ugn" path="res://assets/Torch Animated.png" id="1_l8yo0"]
 [ext_resource type="Script" uid="uid://dlotd08e8by4i" path="res://scenes/destructible.gd" id="2_u70qa"]
+[ext_resource type="Script" uid="uid://bjqtske7q3cm1" path="res://scenes/PickupResource.gd" id="3_iw4aa"]
+[ext_resource type="Resource" uid="uid://vligd3r2sghe" path="res://resources/Pickups/potion.tres" id="4_aay8l"]
+[ext_resource type="Resource" uid="uid://cj3iy46ex132r" path="res://resources/Pickups/death.tres" id="5_aay8l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iw4aa"]
 radius = 5.0
@@ -25,6 +28,7 @@ texture = ExtResource("1_l8yo0")
 hframes = 4
 vframes = 2
 script = ExtResource("2_u70qa")
+drops = Array[ExtResource("3_iw4aa")]([ExtResource("4_aay8l"), ExtResource("5_aay8l")])
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1438050045]
 collision_layer = 2
