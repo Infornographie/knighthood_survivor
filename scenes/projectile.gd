@@ -5,6 +5,7 @@ var speed : float = 200
 var damage : float = 1
 var source
 var time : float = 0.0
+var exiting : bool = false
 
 
 func _physics_process(delta):
@@ -27,6 +28,9 @@ func _on_body_entered(body):
 
 
 func _on_screen_exited():
+	if exiting:
+		return
+	exiting = true
 	var particlesBack = $GPUParticles2D
 	var particlesFront = $GPUParticles2D2
 	var global_pos = global_position

@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="PickupMagnet" format=3 uid="uid://l5e0qlmsffqk"]
+
+[ext_resource type="Texture2D" uid="uid://csxn1jj44obui" path="res://assets/books.png" id="1_jp501"]
+[ext_resource type="Script" uid="uid://c40r2hhr3535g" path="res://scenes/vaccum.gd" id="2_7ni4v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml7bg"]
+atlas = ExtResource("1_jp501")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noner"]
+atlas = ExtResource("1_jp501")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0mk8"]
+atlas = ExtResource("1_jp501")
+region = Rect2(0, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdvrt"]
+atlas = ExtResource("1_jp501")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_itsee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml7bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noner")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0mk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdvrt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_7ni4v")
+title = "Vaccum"
+icon = SubResource("SpriteFrames_itsee")
+description = "Gets all the gems."
+metadata/_custom_type_script = "uid://c40r2hhr3535g"

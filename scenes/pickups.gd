@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction : Vector2
-var speed : float = 175
+var speed : float = 250
 
 @export var type : Pickups
 @export var player_reference : CharacterBody2D:
@@ -17,7 +17,9 @@ func _ready():
 func _physics_process(delta):
 	if player_reference and can_follow:
 		direction = (player_reference.position - position).normalized()
-		position += direction * speed * delta
+		var dynamic_speed = max(speed, player_reference.movement_speed * 1.2)
+		print("speed: ", speed, " player: ", player_reference.movement_speed, " dynamic: ", dynamic_speed)
+		position += direction * dynamic_speed * delta
 
 func follow(_target : CharacterBody2D, gem_flag = false):
 	if type is Chest:

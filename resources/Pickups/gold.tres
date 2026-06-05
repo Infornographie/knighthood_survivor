@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Gold" format=3 uid="uid://e7sqpwnj0x7r"]
+
+[ext_resource type="Texture2D" uid="uid://euw068vbw4g7" path="res://assets/Dungeon Collectables.png" id="1_m6dmv"]
+[ext_resource type="Script" uid="uid://ctqxvsckfcy75" path="res://scenes/gold.gd" id="2_t56nb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbnl6"]
+atlas = ExtResource("1_m6dmv")
+region = Rect2(38, 136, 19, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_366rw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbnl6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[resource]
+script = ExtResource("2_t56nb")
+title = "Gold"
+icon = SubResource("SpriteFrames_366rw")
+description = "+ 5 Gold"
+metadata/_custom_type_script = "uid://ctqxvsckfcy75"

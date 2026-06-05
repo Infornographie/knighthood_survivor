@@ -46,7 +46,7 @@ var level : int = 1:
 func _physics_process(delta):
 	if is_instance_valid(nearest_enemy):
 		nearest_enemy_distance = nearest_enemy.separation #if nearest_enemy is not null, store its separation
-		#qqqqqprint(nearest_enemy.name)
+		#print(nearest_enemy.name)
 	else:
 		nearest_enemy_distance = 400 + area
 		nearest_enemy = null

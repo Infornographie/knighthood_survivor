@@ -60,7 +60,7 @@ func clear_reward():
 		slot.texture = null
 
 func add_gold(index):
-	var gold : Gold = load("res://resources/Others/gold.tres")
+	var gold : Gold = load("res://resources/Pickups/gold.tres")
 	gold.player_reference = owner
-	rewards.get_child(index).texture = gold.texture.get_frame_texture("default", 0)
-	gold.upgrade_item()
+	rewards.get_child(index).texture = gold.icon.get_frame_texture("default", 0)
+	gold.activate()
