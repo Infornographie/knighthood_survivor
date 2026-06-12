@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://euw068vbw4g7" path="res://assets/Dungeon Collectables.png" id="1_m6dmv"]
 [ext_resource type="Script" uid="uid://ctqxvsckfcy75" path="res://scenes/gold.gd" id="2_t56nb"]
+[ext_resource type="AudioStream" uid="uid://ciuul1mw6fc7" path="res://assets/DSGNTonl_USABLE-Coin Spend_HY_PC-006.wav" id="3_t56nb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hbnl6"]
 atlas = ExtResource("1_m6dmv")
@@ -23,4 +24,5 @@ script = ExtResource("2_t56nb")
 title = "Gold"
 icon = SubResource("SpriteFrames_366rw")
 description = "+ 5 Gold"
+sound = ExtResource("3_t56nb")
 metadata/_custom_type_script = "uid://ctqxvsckfcy75"

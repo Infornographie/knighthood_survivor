@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="1_u3afa"]
 [ext_resource type="Script" uid="uid://cqmnlveqvj0go" path="res://scenes/SingleShot.gd" id="2_w5lnj"]
 [ext_resource type="Texture2D" uid="uid://t1wa41xt0xhl" path="res://assets/MiniArchMage.png" id="3_014yh"]
+[ext_resource type="AudioStream" uid="uid://nqfs8bu0dgxy" path="res://assets/freesound_community-cartoon-scream-1-6835.mp3" id="3_w5lnj"]
 [ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_otroj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tr2rn"]
@@ -25,6 +26,7 @@ script = ExtResource("2_w5lnj")
 damage = 10.0
 cooldown = 0.1
 speed = 500.0
+sound = ExtResource("3_w5lnj")
 title = "Arch Mage"
 texture = SubResource("SpriteFrames_vp4df")
 metadata/_custom_type_script = "uid://cqmnlveqvj0go"

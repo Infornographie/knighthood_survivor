@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csxn1jj44obui" path="res://assets/books.png" id="1_wjh4y"]
 [ext_resource type="Script" uid="uid://ds3qmc1sjtfh3" path="res://scenes/death.gd" id="2_1s3nx"]
+[ext_resource type="AudioStream" uid="uid://sx7nm1oivap0" path="res://assets/DSGNMisc_SKILL IMPACT-Energy Dissipate_HY_PC-004.wav" id="3_1s3nx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2ypk1"]
 atlas = ExtResource("1_wjh4y")
@@ -30,4 +31,5 @@ script = ExtResource("2_1s3nx")
 title = "Death"
 icon = SubResource("SpriteFrames_d566k")
 description = "Destroys every enemy."
+sound = ExtResource("3_1s3nx")
 metadata/_custom_type_script = "uid://ds3qmc1sjtfh3"

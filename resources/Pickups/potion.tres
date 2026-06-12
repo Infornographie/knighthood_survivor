@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://3bbnmyrm7oat" path="res://assets/potions.png" id="1_yqbhq"]
 [ext_resource type="Script" uid="uid://cxnyug16ya6ji" path="res://scenes/health.gd" id="2_dhf8i"]
+[ext_resource type="AudioStream" uid="uid://8y6hiyq2h8jl" path="res://assets/DSGNMisc_SKILL RELEASE-Wet Splash_HY_PC-001.wav" id="3_dhf8i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0058l"]
 atlas = ExtResource("1_yqbhq")
@@ -23,4 +24,5 @@ script = ExtResource("2_dhf8i")
 title = "Potion"
 icon = SubResource("SpriteFrames_3cxco")
 description = "+20 Health"
+sound = ExtResource("3_dhf8i")
 metadata/_custom_type_script = "uid://cxnyug16ya6ji"

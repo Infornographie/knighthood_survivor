@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://csxn1jj44obui" path="res://assets/books.png" id="1_jp501"]
 [ext_resource type="Script" uid="uid://c40r2hhr3535g" path="res://scenes/vaccum.gd" id="2_7ni4v"]
+[ext_resource type="AudioStream" uid="uid://xepfdmjn0k27" path="res://assets/DSGNTonl_SKILL IMPACT-Wubwub Impact_HY_PC-002.wav" id="3_7ni4v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ml7bg"]
 atlas = ExtResource("1_jp501")
@@ -44,4 +45,5 @@ script = ExtResource("2_7ni4v")
 title = "Vaccum"
 icon = SubResource("SpriteFrames_itsee")
 description = "Gets all the gems."
+sound = ExtResource("3_7ni4v")
 metadata/_custom_type_script = "uid://c40r2hhr3535g"

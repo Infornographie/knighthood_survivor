@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cuaxv57gi72sj" path="res://resources/Items/Gatherer.tres" id="2_7ncnu"]
 [ext_resource type="Texture2D" uid="uid://b37nj8m1pkh24" path="res://assets/MiniMage.png" id="3_0iqcy"]
 [ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_0iqcy"]
+[ext_resource type="AudioStream" uid="uid://nqfs8bu0dgxy" path="res://assets/freesound_community-cartoon-scream-1-6835.mp3" id="5_7ncnu"]
 [ext_resource type="Script" uid="uid://bo2a3gamue5d4" path="res://scenes/projectile_upgrade.gd" id="5_8px0d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8px0d"]
@@ -61,6 +62,7 @@ speed = 400.0
 upgrades = Array[ExtResource("4_0iqcy")]([SubResource("Resource_tao4j"), SubResource("Resource_7ncnu"), SubResource("Resource_acdsl"), SubResource("Resource_te1mm"), SubResource("Resource_416le")])
 item_needed = ExtResource("2_7ncnu")
 evolution = ExtResource("1_tao4j")
+sound = ExtResource("5_7ncnu")
 title = "Magician"
 texture = SubResource("SpriteFrames_tao4j")
 metadata/_custom_type_script = "uid://cqmnlveqvj0go"
