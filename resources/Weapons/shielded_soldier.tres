@@ -40,6 +40,7 @@ script = ExtResource("3_ueu8i")
 angular_speed = 600
 radius = 100
 damage = 2.0
+cooldown = 1.0
 speed = 10.0
 icon = SubResource("SpriteFrames_yti2b")
 texture = SubResource("SpriteFrames_x4dvw")
