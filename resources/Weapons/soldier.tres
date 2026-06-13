@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="Circular" format=3 uid="uid://cj56kjuiwcdgw"]
+
+[ext_resource type="PackedScene" uid="uid://c2svkfouvwhc0" path="res://scenes/projectile.tscn" id="1_qg2nq"]
+[ext_resource type="Script" uid="uid://devc1ttiu8hov" path="res://scenes/CircularWeapon.gd" id="2_2a7m0"]
+[ext_resource type="Texture2D" uid="uid://btyryml7s30rp" path="res://assets/MiniSwordMan.png" id="3_ehjve"]
+[ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_uf77f"]
+[ext_resource type="Script" uid="uid://5ksliyagtm8w" path="res://scenes/CircularUpgrade.gd" id="5_2a7m0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smiu4"]
+atlas = ExtResource("3_ehjve")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikghh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smiu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Resource" id="Resource_ehjve"]
+script = ExtResource("5_2a7m0")
+angular_speed = 50.0
+description = "+ 50 speed"
+metadata/_custom_type_script = "uid://5ksliyagtm8w"
+
+[sub_resource type="Resource" id="Resource_uf77f"]
+script = ExtResource("5_2a7m0")
+angular_speed = 50.0
+description = "+ 50 Speed"
+metadata/_custom_type_script = "uid://5ksliyagtm8w"
+
+[sub_resource type="Resource" id="Resource_smiu4"]
+script = ExtResource("5_2a7m0")
+damage = 1.0
+description = "+1 Damage"
+metadata/_custom_type_script = "uid://5ksliyagtm8w"
+
+[sub_resource type="Resource" id="Resource_ikghh"]
+script = ExtResource("5_2a7m0")
+angular_speed = 50.0
+description = "+50 Speed"
+metadata/_custom_type_script = "uid://5ksliyagtm8w"
+
+[sub_resource type="Resource" id="Resource_cxhj1"]
+script = ExtResource("5_2a7m0")
+amount = 1
+description = "+ 1 Soldier"
+metadata/_custom_type_script = "uid://5ksliyagtm8w"
+
+[resource]
+script = ExtResource("2_2a7m0")
+angular_speed = 200
+radius = 120
+damage = 2.0
+cooldown = 2.0
+upgrades = Array[ExtResource("4_uf77f")]([SubResource("Resource_ehjve"), SubResource("Resource_uf77f"), SubResource("Resource_smiu4"), SubResource("Resource_ikghh"), SubResource("Resource_cxhj1")])
+title = "Soldier"
+texture = SubResource("SpriteFrames_ikghh")
+metadata/_custom_type_script = "uid://devc1ttiu8hov"

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://caouo6uwakt1c" path="res://scenes/options.gd" id="4_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://b16pxvo6kofku" path="res://scenes/passive_slot.tscn" id="5_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://drnrdsorfde5q" path="res://assets/progress bar medium rounded over.png" id="5_ur7pv"]
+[ext_resource type="Resource" uid="uid://cj56kjuiwcdgw" path="res://resources/Weapons/soldier.tres" id="6_fulsm"]
 [ext_resource type="Texture2D" uid="uid://u0fhtdtoiumt" path="res://assets/progress bar medium rounded progress green.png" id="6_y4r1p"]
 [ext_resource type="Resource" uid="uid://cuaxv57gi72sj" path="res://resources/Items/Gatherer.tres" id="7_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://ncjy4my4l2h6" path="res://assets/progress bar medium rounded progress red.png" id="8_d2wvv"]
@@ -283,6 +284,7 @@ item = ExtResource("3_qlg0r")
 
 [node name="Slot2" parent="UI/Weapons" unique_id=1600673234 instance=ExtResource("2_dqkch")]
 layout_mode = 2
+item = ExtResource("6_fulsm")
 
 [node name="Slot3" parent="UI/Weapons" unique_id=509076158 instance=ExtResource("2_dqkch")]
 layout_mode = 2
