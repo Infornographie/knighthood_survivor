@@ -9,6 +9,21 @@
 [ext_resource type="AudioStream" uid="uid://nqfs8bu0dgxy" path="res://assets/freesound_community-cartoon-scream-1-6835.mp3" id="5_7ncnu"]
 [ext_resource type="Script" uid="uid://bo2a3gamue5d4" path="res://scenes/projectile_upgrade.gd" id="5_8px0d"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ncnu"]
+atlas = ExtResource("3_0iqcy")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_acdsl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ncnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_8px0d"]
 atlas = ExtResource("3_0iqcy")
 region = Rect2(0, 192, 32, 32)
@@ -64,5 +79,6 @@ item_needed = ExtResource("2_7ncnu")
 evolution = ExtResource("1_tao4j")
 sound = ExtResource("5_7ncnu")
 title = "Magician"
+icon = SubResource("SpriteFrames_acdsl")
 texture = SubResource("SpriteFrames_tao4j")
 metadata/_custom_type_script = "uid://cqmnlveqvj0go"

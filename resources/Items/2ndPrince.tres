@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://bd7oaqaol8y3c" path="res://assets/MiniPrinceMan.png" id="2_bca1m"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_bbcmj"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1ooa"]
+atlas = ExtResource("2_bca1m")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bca1m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ooa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ccnrs"]
 atlas = ExtResource("2_bca1m")
 region = Rect2(0, 0, 32, 32)
@@ -66,5 +81,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_b1ooa")
 upgrades = Array[ExtResource("3_bbcmj")]([SubResource("Resource_44gda"), SubResource("Resource_le7f4"), SubResource("Resource_5bi8l"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b"), SubResource("Resource_lmq6b")])
 title = "Second Prince"
+icon = SubResource("SpriteFrames_bca1m")
 texture = SubResource("SpriteFrames_5aj1b")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

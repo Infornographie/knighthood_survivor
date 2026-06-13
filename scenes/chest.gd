@@ -52,7 +52,7 @@ func upgrade_item(start, end):
 		else:
 			var selected_upgrade = upgrades.pick_random()
 			print("selected: ", selected_upgrade)
-			rewards.get_child(index).texture = selected_upgrade.texture.get_frame_texture("default", 0)
+			rewards.get_child(index).texture = selected_upgrade.icon.get_frame_texture("default", 0)
 			selected_upgrade.upgrade_item()
 
 func clear_reward():

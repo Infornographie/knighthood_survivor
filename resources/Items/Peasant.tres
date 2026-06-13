@@ -4,6 +4,42 @@
 [ext_resource type="Texture2D" uid="uid://b8det0tcyeb68" path="res://assets/MiniPeasant.png" id="2_qvfmk"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_c2yvj"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j2wm"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm033"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vjwa"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7ch4"]
+atlas = ExtResource("2_qvfmk")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jg71"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j2wm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm033")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vjwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7ch4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6lqq"]
 atlas = ExtResource("2_qvfmk")
 region = Rect2(0, 160, 32, 32)
@@ -50,5 +86,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_m6lqq")
 upgrades = Array[ExtResource("3_c2yvj")]([SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033"), SubResource("Resource_nm033")])
 title = "Peasant"
+icon = SubResource("SpriteFrames_8jg71")
 texture = SubResource("SpriteFrames_5j2wm")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

@@ -4,6 +4,56 @@
 [ext_resource type="Texture2D" uid="uid://ckkebjpxakmkl" path="res://assets/MiniOldWoman.png" id="2_eonlk"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_b5kl7"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2b2g7"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_anu0t"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic6tj"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0sne"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53lgn"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd60g"]
+atlas = ExtResource("2_eonlk")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_badkd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2b2g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_anu0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic6tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0sne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53lgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd60g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0jwns"]
 atlas = ExtResource("2_eonlk")
 region = Rect2(0, 0, 32, 32)
@@ -50,5 +100,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_0jwns")
 upgrades = Array[ExtResource("3_b5kl7")]([SubResource("Resource_anu0t"), SubResource("Resource_anu0t"), SubResource("Resource_anu0t"), SubResource("Resource_anu0t"), SubResource("Resource_anu0t")])
 title = "Old Woman"
+icon = SubResource("SpriteFrames_badkd")
 texture = SubResource("SpriteFrames_2b2g7")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

@@ -4,6 +4,84 @@
 [ext_resource type="Texture2D" uid="uid://dri6df06w44y0" path="res://assets/MiniGatherer.png" id="2_ogatg"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_c5617"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t5le"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxosn"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xcru"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gf8g"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_putmd"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcg0d"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lex6"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tn7i"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e00yb"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(256, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kipov"]
+atlas = ExtResource("2_ogatg")
+region = Rect2(288, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7o55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t5le")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxosn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xcru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gf8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_putmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wcg0d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lex6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tn7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e00yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kipov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dofyg"]
 atlas = ExtResource("2_ogatg")
 region = Rect2(0, 32, 32, 32)
@@ -69,5 +147,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_dofyg")
 upgrades = Array[ExtResource("3_c5617")]([SubResource("Resource_dofyg"), SubResource("Resource_ogatg"), SubResource("Resource_c5617")])
 title = "Magnet"
+icon = SubResource("SpriteFrames_p7o55")
 texture = SubResource("SpriteFrames_jjqh2")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

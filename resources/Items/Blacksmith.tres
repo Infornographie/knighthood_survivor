@@ -4,6 +4,84 @@
 [ext_resource type="Texture2D" uid="uid://cay8ks0lqsfvu" path="res://assets/MiniBlacksmith.png" id="2_jxc7b"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_w2kde"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnt03"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxc7b"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2kde"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4ujj"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e852"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6iys"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjg02"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0d73k"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yagdv"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(256, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il0jr"]
+atlas = ExtResource("2_jxc7b")
+region = Rect2(288, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgya6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnt03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxc7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2kde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4ujj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e852")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6iys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjg02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0d73k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yagdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il0jr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jdpg"]
 atlas = ExtResource("2_jxc7b")
 region = Rect2(0, 0, 32, 32)
@@ -50,5 +128,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_hnt03")
 upgrades = Array[ExtResource("3_w2kde")]([SubResource("Resource_8e852"), SubResource("Resource_8e852"), SubResource("Resource_8e852"), SubResource("Resource_8e852"), SubResource("Resource_8e852")])
 title = "Blacksmith"
+icon = SubResource("SpriteFrames_wgya6")
 texture = SubResource("SpriteFrames_n4ujj")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

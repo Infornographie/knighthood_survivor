@@ -5,6 +5,21 @@
 [ext_resource type="Texture2D" uid="uid://t1wa41xt0xhl" path="res://assets/MiniArchMage.png" id="3_sj438"]
 [ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_06ua5"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rq63m"]
+atlas = ExtResource("3_sj438")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3gaet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rq63m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrbgc"]
 atlas = ExtResource("3_sj438")
 region = Rect2(0, 224, 32, 32)
@@ -26,5 +41,6 @@ damage = 10.0
 cooldown = 0.1
 speed = 500.0
 title = "Arch Mage"
+icon = SubResource("SpriteFrames_3gaet")
 texture = SubResource("SpriteFrames_pllh4")
 metadata/_custom_type_script = "uid://qkovau6duveb"

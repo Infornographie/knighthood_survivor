@@ -4,6 +4,42 @@
 [ext_resource type="Texture2D" uid="uid://ckoi1m6fm47te" path="res://assets/MiniCrossBowMan.png" id="2_rf5d3"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_2ql4e"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmt75"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf5d3"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ql4e"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbl2m"]
+atlas = ExtResource("2_rf5d3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltion"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmt75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf5d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ql4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbl2m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fdp8h"]
 atlas = ExtResource("2_rf5d3")
 region = Rect2(0, 0, 32, 32)
@@ -50,5 +86,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_cmt75")
 upgrades = Array[ExtResource("3_2ql4e")]([SubResource("Resource_ltion"), SubResource("Resource_ltion"), SubResource("Resource_ltion"), SubResource("Resource_ltion")])
 title = "Crossbow Man"
+icon = SubResource("SpriteFrames_ltion")
 texture = SubResource("SpriteFrames_cbl2m")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

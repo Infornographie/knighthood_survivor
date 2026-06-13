@@ -6,6 +6,21 @@
 [ext_resource type="AudioStream" uid="uid://nqfs8bu0dgxy" path="res://assets/freesound_community-cartoon-scream-1-6835.mp3" id="3_w5lnj"]
 [ext_resource type="Script" uid="uid://bnrc1dld1yi5r" path="res://scenes/Upgrade.gd" id="4_otroj"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5lnj"]
+atlas = ExtResource("3_014yh")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_014yh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5lnj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tr2rn"]
 atlas = ExtResource("3_014yh")
 region = Rect2(0, 224, 32, 32)
@@ -28,5 +43,6 @@ cooldown = 0.1
 speed = 500.0
 sound = ExtResource("3_w5lnj")
 title = "Arch Mage"
+icon = SubResource("SpriteFrames_014yh")
 texture = SubResource("SpriteFrames_vp4df")
 metadata/_custom_type_script = "uid://cqmnlveqvj0go"

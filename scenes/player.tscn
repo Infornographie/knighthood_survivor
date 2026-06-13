@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://u0fhtdtoiumt" path="res://assets/progress bar medium rounded progress green.png" id="6_y4r1p"]
 [ext_resource type="Resource" uid="uid://cuaxv57gi72sj" path="res://resources/Items/Gatherer.tres" id="7_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://ncjy4my4l2h6" path="res://assets/progress bar medium rounded progress red.png" id="8_d2wvv"]
-[ext_resource type="Resource" uid="uid://deh1k2atr2m1u" path="res://resources/Items/ShieldBearer.tres" id="8_oprun"]
+[ext_resource type="Resource" uid="uid://b6h5v4y5c6ljk" path="res://resources/Items/Blacksmith.tres" id="9_fulsm"]
 [ext_resource type="Resource" uid="uid://chqwshnxj3mx5" path="res://resources/Items/HorseMan.tres" id="9_qfm1y"]
 [ext_resource type="Script" uid="uid://b0jpjpj73kcyq" path="res://scenes/chest.gd" id="10_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://blep2y0n43emy" path="res://assets/RPG Chests.png" id="11_qfm1y"]
@@ -301,7 +301,7 @@ item = ExtResource("7_f1ej7")
 
 [node name="PassiveSlot2" parent="UI/PassiveItems" unique_id=18568804 instance=ExtResource("5_d2wvv")]
 layout_mode = 2
-item = ExtResource("8_oprun")
+item = ExtResource("9_fulsm")
 
 [node name="PassiveSlot3" parent="UI/PassiveItems" unique_id=1650532328 instance=ExtResource("5_d2wvv")]
 layout_mode = 2

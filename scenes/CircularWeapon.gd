@@ -20,6 +20,7 @@ func add_to_player(source):
 	projectile.speed = 0
 	projectile.damage = damage
 	projectile.source = source
+	projectile.find_child("AnimatedSprite2D").sprite_frames = texture
 	projectile.hide()
 	
 	projectile_reference.append(projectile)

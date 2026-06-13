@@ -4,6 +4,56 @@
 [ext_resource type="Texture2D" uid="uid://cb2mwqatyrqop" path="res://assets/MiniShieldMan.png" id="2_y1rjs"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_1jjai"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c6tr"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlj1f"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0uw2"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6uoj"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(96, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv48l"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(128, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn0fx"]
+atlas = ExtResource("2_y1rjs")
+region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ji0h6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c6tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlj1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0uw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6uoj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv48l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn0fx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vll8"]
 atlas = ExtResource("2_y1rjs")
 region = Rect2(0, 32, 32, 32)
@@ -64,5 +114,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_3vll8")
 upgrades = Array[ExtResource("3_1jjai")]([SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg"), SubResource("Resource_m2wfg")])
 title = "Shield Bearer"
+icon = SubResource("SpriteFrames_ji0h6")
 texture = SubResource("SpriteFrames_2c6tr")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"

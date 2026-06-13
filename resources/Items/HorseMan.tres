@@ -4,6 +4,56 @@
 [ext_resource type="Texture2D" uid="uid://ce83lf6mgxfjn" path="res://assets/MiniHorseMan.png" id="2_vuvh7"]
 [ext_resource type="Script" uid="uid://bfnqq8xbayqre" path="res://scenes/stats.gd" id="3_h5l4f"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk8dp"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv588"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeh8m"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhglt"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq2s1"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5altu"]
+atlas = ExtResource("2_vuvh7")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ku0ag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk8dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv588")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeh8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhglt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq2s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5altu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ll2ps"]
 atlas = ExtResource("2_vuvh7")
 region = Rect2(0, 32, 32, 32)
@@ -112,5 +162,6 @@ metadata/_custom_type_script = "uid://bfnqq8xbayqre"
 script = ExtResource("1_ll2ps")
 upgrades = Array[ExtResource("3_h5l4f")]([SubResource("Resource_k25w3"), SubResource("Resource_uk8dp"), SubResource("Resource_xv588"), SubResource("Resource_jeh8m"), SubResource("Resource_nhglt"), SubResource("Resource_iq2s1"), SubResource("Resource_5altu"), SubResource("Resource_ku0ag"), SubResource("Resource_p1vht")])
 title = "Horse Man"
+icon = SubResource("SpriteFrames_ku0ag")
 texture = SubResource("SpriteFrames_8gwnu")
 metadata/_custom_type_script = "uid://cogoceccj8gdi"
